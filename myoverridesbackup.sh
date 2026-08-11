@@ -1,7 +1,7 @@
 #!/bin/ash
 export PATH=/opt/bin:$PATH
 cd /mnt/UDISK/printer_data/config
-git add overrides.cfg printer.cfg gcode_macro.cfg box.cfg myoverridesbackup.sh
+git add overrides.cfg printer.cfg gcode_macro.cfg box.cfg myoverridesbackup.sh README.md
 if git diff --cached --quiet; then
     echo "No changes to commit"
     exit 0
