@@ -97,4 +97,7 @@ Use at your own risk, I'm not responsible for fires or broken dreams. But you do
 
 Про удаление неудаляемых G-code из хранилища принтера https://share.google/aimode/TskVLrYtckR1YiFxq
 
-Если принтер после хоуминга слишком агрессивно бьётся в стены за лотком могли сбиться моторы - перекалибруйте https://wiki.creality.com/en/k2-flagship-series/k2-plus/calibrate-servo-motor
+Если принтер после хоуминга слишком агрессивно бьётся в стены за лотком или экструзия пошла с диагональными полосами по Z могли сбиться моторы.
+В целом после обновления особеннно зводского разумно будет:
+перекалибровать моторы https://wiki.creality.com/en/k2-flagship-series/k2-plus/calibrate-servo-motor
+и экструдер https://wiki.creality.com/en/k2-flagship-series/k2-plus/calibrate-extrusion-servo-motor
