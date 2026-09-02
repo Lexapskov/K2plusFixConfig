@@ -5,6 +5,7 @@ START_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_tempe
 {if multicolor_method}
 
 M83 
+G0 Y345 F18000
 M8200 P S[initial_no_support_extruder]
 M220 S100
 G0 F30000
@@ -81,7 +82,8 @@ G1 E-[retract_length_toolchange[initial_no_support_extruder]] F1800
 ; FLUSH_END
 
 ; WIPE
-BOX_NOZZLE_CLEANPLUS
+SOFT_NOZZLE_CLEAN
+BOX_NOZZLE_CLEAN
 
 
 M8200 O
@@ -125,5 +127,6 @@ G1 Z1 F600
 {endif}
 
 SET_VELOCITY_LIMIT ACCEL=[default_acceleration] ACCEL_TO_DECEL=3300
-M106 P2 S[during_print_exhaust_fan_speed]
+M106 P1 S[during_print_exhaust_fan_speed]
+SET_PRESSURE_ADVANCE  SMOOTH_TIME=0.025
 ;SET_ZOFFSET FIRST_LAYER_HEIGHT=[first_layer_height] FILAMENT_SHRINK=[filament_shrink] NOZZLE_TEMPERATURE_INITIAL_LAYER=[nozzle_temperature_initial_layer]
