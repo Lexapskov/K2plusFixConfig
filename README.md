@@ -103,3 +103,6 @@ Use at your own risk.
 В целом после обновления особеннно зводского разумно будет:
 перекалибровать моторы https://wiki.creality.com/en/k2-flagship-series/k2-plus/calibrate-servo-motor
 и экструдер https://wiki.creality.com/en/k2-flagship-series/k2-plus/calibrate-extrusion-servo-motor
+
+
+12.09.2026 - наконец собрал макрос который адекватно отрабатывает последовательное изменение SMOOTH_TIME и ADVANCE и способен адекватно использовать значение из конфига по умолчанию, если ранее не было сохранено иное
