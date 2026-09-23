@@ -129,4 +129,4 @@ G1 Z1 F600
 SET_VELOCITY_LIMIT ACCEL=[default_acceleration] ACCEL_TO_DECEL=3300
 M106 P1 S[during_print_exhaust_fan_speed]
 SET_PRESSURE_ADVANCE  SMOOTH_TIME=0.025
-;SET_ZOFFSET FIRST_LAYER_HEIGHT=[first_layer_height] FILAMENT_SHRINK=[filament_shrink] NOZZLE_TEMPERATURE_INITIAL_LAYER=[nozzle_temperature_initial_layer]
+SET_ZOFFSET FIRST_LAYER_HEIGHT=[first_layer_height] FILAMENT_SHRINK=[filament_shrink] NOZZLE_TEMPERATURE_INITIAL_LAYER=[nozzle_temperature_initial_layer]
