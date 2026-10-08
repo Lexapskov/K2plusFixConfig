@@ -1,5 +1,3 @@
-M140 S0
-M104 S0 
 START_PRINT EXTRUDER_TEMP=[nozzle_temperature_initial_layer] BED_TEMP=[bed_temperature_initial_layer_single] CHAMBER_TEMP=[overall_chamber_temperature]
 
 {if multicolor_method}
@@ -82,15 +80,20 @@ G1 E-[retract_length_toolchange[initial_no_support_extruder]] F1800
 ; FLUSH_END
 
 ; WIPE
+G4 P{overall_chamber_temperature*1000}
 SOFT_NOZZLE_CLEAN
 BOX_NOZZLE_CLEAN
+NOZZLE_CLEAR
+G28 Z
 
-
+;PURGE
+M104 S[nozzle_temperature_initial_layer]
 M8200 O
 M204 S2000
 G1 Z3 F600
 G1 X160 F12000
 G1 X150 Y-1 F30000
+M109 S[nozzle_temperature_initial_layer]
 G1 E[retraction_length]  F300
 G1 Z0.3 F1200
 G1 X175 E9  F{outer_wall_volumetric_speed/(24/20)  * 60}
