@@ -80,15 +80,20 @@ G1 E-[retract_length_toolchange[initial_no_support_extruder]] F1800
 ; FLUSH_END
 
 ; WIPE
-G4 P{overall_chamber_temperature*1000}
-SOFT_NOZZLE_CLEAN
 BOX_NOZZLE_CLEAN
+BOX_GO_TO_EXTRUDE_POS
+; G4 P{overall_chamber_temperature*1000}
+G4 P60000
+SOFT_NOZZLE_CLEAN
+BOX_GO_TO_EXTRUDE_POS
 NOZZLE_CLEAR
 G28 Z
-M104 S[nozzle_temperature_initial_layer]
 BED_MESH_TLOAD BED_TEMP=[bed_temperature_initial_layer_single]
+SET_GCODE_OFFSET Z=0.01 MOVE=1
+
 
 ;PURGE
+M104 S[nozzle_temperature_initial_layer]
 M8200 O
 M204 S2000
 G1 Z3 F600
@@ -133,4 +138,4 @@ G1 Z1 F600
 SET_VELOCITY_LIMIT ACCEL=[default_acceleration] ACCEL_TO_DECEL=3300
 M106 P1 S[during_print_exhaust_fan_speed]
 SET_PRESSURE_ADVANCE  SMOOTH_TIME=0.025
-SET_ZOFFSET FIRST_LAYER_HEIGHT=[first_layer_height] FILAMENT_SHRINK=[filament_shrink] NOZZLE_TEMPERATURE_INITIAL_LAYER=[nozzle_temperature_initial_layer]
+;SET_ZOFFSET FIRST_LAYER_HEIGHT=[first_layer_height] FILAMENT_SHRINK=[filament_shrink] NOZZLE_TEMPERATURE_INITIAL_LAYER=[nozzle_temperature_initial_layer]
